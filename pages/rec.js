@@ -2,7 +2,7 @@ import { getSession, useSession } from "next-auth/client";
 import Image from "next/image";
 import  { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { useCollection } from "react-firebase-hooks/firestore";
+import { useCollection } from `react-firebase-hooks/firestore`;
 import Header from "../components/Header";
 import { db } from "../firebasee";
 
@@ -10,9 +10,6 @@ function Rec({session}) {
     const [queries,setQueries] = useState(null);
     const [meetings] = useCollection(db.collection('Meetings'))
     const Routeer = useRouter()
-    if(session.user.email != '18se02ce043@ppsu.ac.in') {
-      return (<div>You don't have access</div>) 
-    }
     useEffect(() => {
         if (Routeer.asPath !== Routeer.route) {
            setQueries(Routeer.query)
@@ -21,6 +18,10 @@ function Rec({session}) {
            
         }
       }, [Routeer])
+    if(session.user.email != '18se02ce043@ppsu.ac.in') {
+      return (<div>You don't have access</div>) 
+    }
+    
      
     return (
         <div className="min-h-screen bg-gray-200">
