@@ -1,4 +1,4 @@
-import { useSession } from "next-auth/client"
+import { signOut, useSession } from "next-auth/client"
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image"
 
@@ -32,6 +32,7 @@ function Header() {
                     src = {session.user.image}
                     width={40}
                     height={40}
+                    onClick={signOut}
                     layout="fixed"
                     className="cursor-pointer rounded-full w-full"
                 />
