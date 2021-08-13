@@ -21,7 +21,7 @@ function Rec({session}) {
         }
       }, [Routeer])
     if(session.user.email != '18se02ce043@ppsu.ac.in') {
-      return (<div>You don't have access</div>) 
+      return (<div>You dont have access</div>) 
     }
     
      
