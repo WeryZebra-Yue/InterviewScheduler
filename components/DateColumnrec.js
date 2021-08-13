@@ -27,7 +27,7 @@ let arr3 = []
         </div>
         </div>
         
-        <Link href={`rec?s=1&m=${month}&d=${day}`}>
+        <Link href={`Rec?s=1&m=${month}&d=${day}`}>
         <div  id = {`1${month}${day}`}className="h-28 cursor-pointer w-28  m-[2px] rounded-md flex justify-center font-semibold items-center scroll bg-white  ">
             {meetings?.docs.map(value =>{
             // console.log((`1${month}${day}` == `${value.data().sloat}${value.data().month}${value.data().day}`))

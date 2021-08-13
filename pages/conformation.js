@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Conformation_page from "../components/Conformation_page"
 import { getSession, useSession } from "next-auth/client"
-function conformation({session}) {
+function Conformation({session}) {
   console.log(session)
 
     const router = useRouter()
@@ -45,4 +45,4 @@ export async function getServerSideProps(context){
       },
     }
   }
-export default conformation
+export default Conformation

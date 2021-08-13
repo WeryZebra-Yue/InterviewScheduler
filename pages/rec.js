@@ -6,7 +6,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import Header from "../components/Header";
 import { db } from "../firebasee";
 
-function rec({session}) {
+function Rec({session}) {
     const [queries,setQueries] = useState(null);
     const [meetings] = useCollection(db.collection('Meetings'))
     const Routeer = useRouter()
@@ -74,4 +74,4 @@ export async function getServerSideProps(context){
       },
     }
   }
-export default rec
+export default Rec
