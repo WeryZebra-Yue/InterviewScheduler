@@ -1,8 +1,9 @@
-import { getSession, useSession } from "next-auth/client";
-import Image from "next/image";
+import { useCollection } from 'react-firebase-hooks/firestore';
+import { getSession } from "next-auth/client";
+
 import  { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { useCollection } from "react-firebase-hooks/firestore";
+
 
 import Header from "../components/Header";
 import { db } from "../firebasee";
