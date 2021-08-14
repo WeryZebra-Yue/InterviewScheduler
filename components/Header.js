@@ -1,19 +1,20 @@
 import { signOut, useSession } from "next-auth/client"
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image"
+import Link from "next/link";
 
 
 function Header() {
  const [session] = useSession();
  const Routers = useRouter(); 
- const goToIndex = () =>{
-   Routers.replace('/')
+//  const goToIndex = () =>{
+//    Routers.replace('/')
    
- }
+//  }
   return (
         <div >
         <div className="bg-white shadow-md p-2 flex  justify-between w-full static">
-          
+           <Link href="/" replace>
               <div className="flex items-center cursor-pointer hover:scale-110 transition-all duration-100 pl-1" onClick={goToIndex}>
                     <Image src="https://img.icons8.com/fluency/96/000000/overtime.png"
                     width = {50}
@@ -21,7 +22,7 @@ function Header() {
                     />
                     <h1 className=" text-blue-800 text-xl pl-3 font-medium newFont">Interview Schedular</h1>
               </div>
-            
+              </Link>
               {
                  session &&
               <div className="flex items-center sm:space-x-2 justify-end cursor-pointer " >
