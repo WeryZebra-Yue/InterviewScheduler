@@ -15,6 +15,7 @@ function Header() {
         <div >
         <div className="bg-white shadow-md p-2 flex  justify-between w-full static">
           <div>
+            {
            <a href="/" replace = "true">
               <div className="flex items-center cursor-pointer hover:scale-110 transition-all duration-100 pl-1" >
                     <Image src="https://img.icons8.com/fluency/96/000000/overtime.png"
@@ -24,6 +25,7 @@ function Header() {
                     <h1 className=" text-blue-800 text-xl pl-3 font-medium newFont">Interview Schedular</h1>
               </div>
               </a>
+            }
               </div>
               {
                  session &&
