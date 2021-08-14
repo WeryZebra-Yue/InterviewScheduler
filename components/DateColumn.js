@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router'
-import Link from 'next/link'
+
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { db } from '../firebasee';
 
@@ -41,22 +41,22 @@ function DateColumn({day,month,weekday,email}) {
         </div>
         {!flag &&
         <div>
-        <Link href={`/conformation?s=${1}&m=${month}&d=${day}`}>
+        <a href={`/conformation?s=${1}&m=${month}&d=${day}`}>
         <div id ={`1${month}${day}`}className="h-28 w-28  m-[2px] rounded-md flex justify-center text-center font-semibold items-center scroll bg-gray-100 hover:bg-white tranistion-all duration-100 cursor-pointer group ">
         
         <span className="group-hover:opacity-100 opacity-0 duration-100 transition-all items-center " >Schedule</span>
         </div>
-        </Link>
-        <Link href={`/conformation?s=${2}&m=${month}&d=${day}`}>
+        </a>
+        <a href={`/conformation?s=${2}&m=${month}&d=${day}`}>
         <div id ={`2${month}${day}`}className="h-28  m-[2px] rounded-md flex justify-center text-center  font-semibold items-center scroll bg-gray-100 hover:bg-white tranistion-all duration-100 cursor-pointer group ">
         <span className="group-hover:opacity-100 opacity-0 duration-100 transition-all items-center " >Schedule</span>     
         </div>
-        </Link>
-        <Link href={`/conformation?s=${3}&m=${month}&d=${day}`}>
+        </a>
+        <a href={`/conformation?s=${3}&m=${month}&d=${day}`}>
         <div id ={`3${month}${day}`}className="h-28  m-[2px] rounded-md flex justify-center text-center  font-semibold  items-center scroll bg-gray-100 hover:bg-white tranistion-all duration-100 cursor-pointer group ">
         <span className="group-hover:opacity-100 opacity-0 duration-100 transition-all items-center " >Schedule</span>     
         </div>
-        </Link>
+        </a>
         </div>}
         {flag &&
         <div>

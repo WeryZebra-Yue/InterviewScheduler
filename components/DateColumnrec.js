@@ -1,7 +1,7 @@
 import { db, rdb } from "../firebasee"
 import {useCollection} from 'react-firebase-hooks/firestore'
 import router from "next/router"
-import Link from "next/link"
+
 
 function DateColumnrec({day,month,weekday}) {
 const [meetings] = useCollection(db.collection("Meetings"))
@@ -27,7 +27,7 @@ let arr3 = []
         </div>
         </div>
         
-        <Link href={`rec?s=1&m=${month}&d=${day}`}>
+        <a href={`rec?s=1&m=${month}&d=${day}`}>
         <div  id = {`1${month}${day}`}className="h-28 cursor-pointer w-28  m-[2px] rounded-md flex justify-center font-semibold items-center scroll bg-white  ">
             {meetings?.docs.map(value =>{
             // console.log((`1${month}${day}` == `${value.data().sloat}${value.data().month}${value.data().day}`))
@@ -44,8 +44,8 @@ let arr3 = []
         }
         <p id ={`1${month}${day}1`} className="text-sm items-center flex w-full text-center"> </p>
         </div>
-        </Link>
-        <Link href={`rec?s=2&m=${month}&d=${day}`}>
+        </a>
+        <a href={`rec?s=2&m=${month}&d=${day}`}>
         <div  id = {`2${month}${day}`}className="h-28 cursor-pointer  m-[2px] rounded-md flex justify-center  font-semibold items-center scroll bg-white  ">
         {meetings?.docs.map(value =>{
             if(!value.data().accept){
@@ -64,8 +64,8 @@ let arr3 = []
 }
         <p  id = {`2${month}${day}1`} className="text-sm items-center flex w-full text-center"> </p>
         </div>
-        </Link>
-        <Link href={`rec?s=3&m=${month}&d=${day}`}>
+        </a>
+        <a href={`rec?s=3&m=${month}&d=${day}`}>
         <div  id = {`3${month}${day}`}className="h-28 cursor-pointer  m-[2px] rounded-md flex justify-center  font-semibold  items-center scroll bg-white  ">
         {meetings?.docs.map(value =>{
              if(!value.data().accept){
@@ -84,7 +84,7 @@ let arr3 = []
         })
 }
         </div>
-        </Link>
+        </a>
         <p id = {`3${month}${day}1`} className="text-sm items-center flex w-full text-center"> </p>
         </div>
 }
