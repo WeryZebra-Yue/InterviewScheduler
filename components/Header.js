@@ -15,7 +15,7 @@ function Header() {
         <div >
         <div className="bg-white shadow-md p-2 flex  justify-between w-full static">
            <Link href="/" replace>
-              <div className="flex items-center cursor-pointer hover:scale-110 transition-all duration-100 pl-1" onClick={goToIndex}>
+              <div className="flex items-center cursor-pointer hover:scale-110 transition-all duration-100 pl-1" >
                     <Image src="https://img.icons8.com/fluency/96/000000/overtime.png"
                     width = {50}
                     height = {50}
