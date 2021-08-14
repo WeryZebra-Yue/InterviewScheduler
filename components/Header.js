@@ -7,7 +7,7 @@ function Header() {
  const [session] = useSession();
  const Routers = useRouter(); 
  const goToIndex = () =>{
-   Routers.push('/')
+  location.replace('/')
    
  }
   return (
