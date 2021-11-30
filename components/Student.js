@@ -21,10 +21,8 @@ function Student(email) {
      <div className="flex items-center h-screen justify-center">
          <div className="flex flex-col mb-0  md:mb-3 mr-3">
 <div className="bg-gray-100 shadow-md hover:scale-105 cursor-pointer  w-28 m-[2px] flex items-center  flex-col rounded-md text-center">
-        <div className="flex font-medium text-gray-800 h-full ">Slots</div>
-        <div>
-        &nbsp;
-        </div>
+        <div className="flex font-medium text-gray-800 h-full"><div>Slots</div></div>
+      
         </div>
         <div className="h-28 w-28 bg-white m-[2px] rounded-md flex items-center justify-center font-medium">
             8:00 - 11:00
