@@ -17,21 +17,21 @@ function Recruiter() {
    
     return (
      
-     <div className="flex items-center h-screen justify-center">
+     <div className="flex items-center h-screen justify-center p-10 ">
          <div className="flex flex-col mb-0  md:mb-3 mr-3">
-<div className="bg-gray-100 shadow-md hover:scale-105 cursor-pointer  w-28 m-[2px] flex items-center flex-col rounded-md">
-        <div className="font-medium text-gray-800">Slots</div>
-        <div>
-        &nbsp;
+<div className="bg-white shadow-md h-12 hover:scale-105 cursor-pointer  w-28 m-[2px] flex justify-center items-center flex-col rounded-md ">
+
+        <div className="font-medium text-gray-800 ">Slots</div>
+      
         </div>
-        </div>
-        <div className="h-28 w-28 bg-white m-[2px] rounded-md flex items-center justify-center font-medium">
+        <div className="h-28 w-28 bg-white shadow-md m-[2px] rounded-md flex items-center justify-center font-medium">
+           
             8:00 - 11:00
         </div>
-        <div className="h-28 bg-white m-[2px] rounded-md flex items-center justify-center font-medium ">
+        <div className="h-28 bg-white m-[2px] shadow-md rounded-md flex items-center justify-center font-medium ">
             12:00 - 2:00
         </div>
-        <div className="h-28 bg-white m-[2px] rounded-md flex items-center justify-center font-medium ">
+        <div className="h-28 bg-white m-[2px] shadow-md rounded-md flex items-center justify-center font-medium ">
             3:00 - 5:00
         </div>
         </div>  

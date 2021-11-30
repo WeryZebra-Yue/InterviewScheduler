@@ -23,25 +23,7 @@ export default function Home({session}) {
 </div>
 
   );
-  const [loading,setLoading] = useState(true);
-useEffect(()=>{
  
-  Routers.events.on("routeChangeStart",()=>{
-      setLoading(false)
-  })
-  
-  Routers.events.on("routeChangeComplete", () => {
-   setLoading(true)
-   
-   
-  })
-  Routers.events.on("hashChangeComplete",()=>{
-    setLoading(true)
-  })
-  console.log(loading)
-
- 
-})
 
   return (
     <div className="bg-gray-200 min-h-screen">

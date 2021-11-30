@@ -4,7 +4,7 @@ import { getSession } from "next-auth/client";
 import  { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
-
+import { signIn } from 'next-auth/client';
 import Header from "../components/Header";
 import { db } from "../firebasee";
 
@@ -12,6 +12,13 @@ function Rec({session}) {
     const [queries,setQueries] = useState(null);
     const [meetings] = useCollection(db.collection('Meetings'))
     const Routeer = useRouter()
+    if(!session)return(
+        <div className="flex flex-col justify-center min-h-screen bg-gray-200 items-center unselectable ">
+                  
+          <div>{process.env.GOOGLE_ID} </div>  
+        <h1 onClick={signIn} className="p-5 cursor-pointer m-7 bg-blue-800 text-white rounded-xl text-center font-semibold text-lg"> Log In with Google</h1>
+    
+    </div>);
     useEffect(() => {
         if (Routeer.asPath !== Routeer.route) {
            setQueries(Routeer.query)
