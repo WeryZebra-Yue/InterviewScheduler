@@ -20,14 +20,14 @@ function Rec({session}) {
            
         }
       }, [Routeer])
-    if(session.user.email != '18se02ce043@ppsu.ac.in') {
+    if(session.user.email != '20se02ce035@ppsu.ac.in') {
       return (<div>You dont have access</div>) 
     }
     
      
     return (
         <div className="min-h-screen bg-gray-200">
-            <Header/>
+            <Header userName={session.user.name} image={session.user.image}/> 
             <div className="m-5">
             {
                 meetings?.docs.map((value,index)=>{

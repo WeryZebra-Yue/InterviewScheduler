@@ -6,9 +6,14 @@ import styles from '../styles/Home.module.css'
 import Student from '../components/Student'
 import Recruiter from '../components/Recruiter'
 import { rdb } from '../firebasee'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+
 
 export default function Home({session}) {
   const [sessions] = useSession();
+ const Routers = useRouter(); 
+
   if(!session)return(
     <div className="flex flex-col justify-center min-h-screen bg-gray-200 items-center unselectable ">
               
@@ -18,34 +23,52 @@ export default function Home({session}) {
 </div>
 
   );
-  rdb.ref("users").child(`${session.user.email.split("@")[0]}`).set({
+  const [loading,setLoading] = useState(true);
+useEffect(()=>{
+ 
+  Routers.events.on("routeChangeStart",()=>{
+      setLoading(false)
+  })
+  
+  Routers.events.on("routeChangeComplete", () => {
+   setLoading(true)
    
-    name : session.user.name,
-    image : session.user.image,
-    cas : session.user.name.toLowerCase()
+   
+  })
+  Routers.events.on("hashChangeComplete",()=>{
+    setLoading(true)
+  })
+  console.log(loading)
 
- })
+ 
+})
+
   return (
     <div className="bg-gray-200 min-h-screen">
+     
       <div >
       <Head>
         <title>Interview Schedular</title>
       </Head>
-      <Header/>
+      { session &&
+      <Header userName={session.user.name} image={session.user.image}/>
+      }
       {/* Date Choose Component*/}
       {/* Footer */}
      
       {/* Student */}
       {
-        session.user.email != '18se02ce043@ppsu.ac.in' && 
+        session.user.email != '20se02ce035@ppsu.ac.in' && 
         <Student email = {session.user.email}/>
       }
       {/* Recuruiter */}
       {
-        session.user.email == '18se02ce043@ppsu.ac.in' && 
+        session.user.email == '20se02ce035@ppsu.ac.in' && 
         <Recruiter email = {session.user.email}/>
       }
+      
       </div>
+
     </div>
   )
 }

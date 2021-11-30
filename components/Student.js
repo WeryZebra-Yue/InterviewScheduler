@@ -20,8 +20,8 @@ function Student(email) {
      
      <div className="flex items-center h-screen justify-center">
          <div className="flex flex-col mb-0  md:mb-3 mr-3">
-<div className="bg-gray-100 shadow-md hover:scale-105 cursor-pointer  w-28 m-[2px] flex items-center flex-col rounded-md">
-        <div className="font-medium text-gray-800">Slots</div>
+<div className="bg-gray-100 shadow-md hover:scale-105 cursor-pointer  w-28 m-[2px] flex items-center  flex-col rounded-md text-center">
+        <div className="flex font-medium text-gray-800 h-full ">Slots</div>
         <div>
         &nbsp;
         </div>
